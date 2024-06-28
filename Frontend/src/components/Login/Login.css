@@ -1,0 +1,159 @@
+
+
+
+.login-background {
+    width: 100%;
+    height: 100%;
+    position: fixed; /* Use fixed instead of absolute for overlay */
+    top: 0;
+    left: 0;
+    background-color: rgba(57, 53, 53, 0.569);
+    z-index: 2; /* Ensure the overlay is above other content */
+    backdrop-filter: blur(5px);
+}
+
+.login-container{
+    
+position: absolute;
+background-size:cover;
+    width: 350px;
+    margin-left: 7px;
+    ;
+    top:30%;
+    left:38%;
+    border-radius: 10px;
+    background-color:#F9FCFF;
+    align-self: center;
+    min-height: 400px;
+    transition: all ease 0.4s;
+}
+.login-heading h1{
+    text-align: center;
+    padding-top: 20px;
+}
+.cross{
+    position: absolute;
+    top:50px;
+    right: 50px;
+    cursor: pointer;
+}
+.login-form-container{
+    
+padding: 20px;
+}
+
+/* Login heading styles */
+.login-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-heading h1 {
+    font-size: 24px;
+    color: #333; /* Dark color for the heading */
+}
+
+/* Close icon container */
+.cross {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.cross img {
+    width: 20px; /* Adjust size as needed */
+}
+
+/* Login form container */
+.login-form-container {
+    margin-top: 20px;
+}
+
+/* Login form styles */
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-information {
+    margin-bottom: 15px;
+}
+
+.user-information label {
+    margin-bottom: 19px;
+    
+}
+
+.user-information input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-button {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-button button {
+    padding: 10px 20px;
+    background-color: tomato; /* Blue color for the button */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-button button:hover {
+    background-color: rgb(193, 39, 12); /* Darker shade of blue on hover */
+}
+
+/* Checkbox container */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-top: 17px;
+    
+    
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+    background-color: tomato;
+}
+
+/* Switch state container (Login/Sign up links) */
+.switch-state-container {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 23px;
+}
+
+.switch-state-container p {
+    margin-bottom: 5px;
+}
+
+.switch-state-container span {
+    color: tomato; /* Blue color for the links */
+    cursor: pointer;
+    text-decoration: underline;
+    
+}
+
+.switch-state-container span:hover {
+    color: tomato; /* Darker shade of blue on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 750px) {
+    .login-container {
+        left: 6.6%;
+        top: 15%;
+        /* Adjust width for smaller screens */
+    }
+}

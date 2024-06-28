@@ -1,0 +1,50 @@
+.item-show-container {
+    width: 90%;
+    margin: auto;
+}
+
+.header-container {
+    width: 100%;
+    background-color: tomato;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 3fr 1fr 1fr;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.food-details {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 3fr 1fr 1fr;
+    text-align: center;
+    border-radius: 10px;
+    border-bottom: 2px solid black;
+}
+
+.food-details img {
+    margin: auto;
+    height: 40px;
+}
+
+.food-details .food-description {
+    text-align: center;
+    min-width: 30px; /* Set minimum width, can adjust as needed */
+    max-width: 100%; /* Ensure it can expand if needed */
+    height: 20px;
+    overflow-y: auto; /* Enable horizontal scrollbar if content overflows */
+    
+    ; /* Ensure text doesn't wrap */
+}
+
+.food-description::-webkit-scrollbar{
+    display: none;
+}
+.delete-item-btn{
+    background-color: transparent;
+    border: none;
+    color: red;
+}
+.No-items{
+    text-align: center;
+}

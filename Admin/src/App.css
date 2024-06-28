@@ -1,0 +1,17 @@
+.contain-container{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    
+    
+}
+
+.routes{
+    
+    max-height: 90vh;
+    min-height: 90vh;
+    border: 1px solid #ccc;
+    
+
+    width: 100%;
+}

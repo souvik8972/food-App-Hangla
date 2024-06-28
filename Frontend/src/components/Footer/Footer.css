@@ -1,0 +1,82 @@
+.footer-container{
+    background-color: rgb(116, 112, 112);
+    color: white;
+    width: 100%;
+    display: flex;
+    gap:50px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 10px  10px 0 0;
+    margin-top: 50px;
+    overflow: hidden;
+    border-bottom: 2px solid rgba(245, 222, 179, 0.459);
+}
+.left-footer{
+    width: 30%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.middle-footer,.right-footer{
+
+    padding: 40px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    text-align: center;
+    
+    
+
+}
+.footer-heading{
+    
+    font-family: "Merienda", cursive;
+}
+.logo-name{
+    color: rgb(255, 107, 80);
+}
+.left-footer .link-image{
+    display: flex;
+    gap: 20px;
+    
+}
+.left-footer .link-image a{
+    cursor: pointer;
+}
+.middle-footer ul,.right-footer ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    text-align: center;
+}
+.middle-footer ul li,.right-footer ul li{
+    cursor: pointer;
+}
+.middle-footer ul li:hover,.right-footer ul li:hover{
+    
+    text-decoration: underline white;
+}
+.copyRight{
+background-color: rgb(116, 112, 112);
+    text-align: center;
+    color: aliceblue;
+    padding: 10px;
+}
+@media (max-width: 750px){
+  
+  .footer-container {
+    gap: 10px;
+  }
+  .left-footer p{display: none;}
+  .link-image{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+  .middle-footer ul{
+    gap: 37px;
+  }
+
+}

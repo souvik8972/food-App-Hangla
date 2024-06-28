@@ -1,0 +1,42 @@
+.sidebar{
+
+    height: 90vh;
+    
+}
+.sidebar-options{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+.sidebar-option{
+    display: flex;
+    gap: 20px;
+    padding: 0px;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px 0 0 10px;
+    border-right: none;
+    width: 10%;
+    margin-bottom: 10px;
+    width: 150px;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+    transition: all ease 0.4s;
+}
+.sidebar-option.active{
+    background-color: rgb(255, 68, 0);
+    color: white;
+
+    
+}
+.sidebar-options .sidebar-option img {
+height: 20px;
+
+    background-size: contain;
+    
+}

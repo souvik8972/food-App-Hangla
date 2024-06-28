@@ -1,0 +1,144 @@
+/* FoodItem.css */
+
+.food-item-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  max-width: 250px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.food-item-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.food-item-img-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #f0f0f0b1;
+}
+
+.food-item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+.food-item-img-container:hover .food-item-img {
+  transform: scale(1.05);
+}
+
+.food-item-counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 10px;
+  left: 80%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.969);
+  border-radius: 20px;
+  padding: 5px 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.food-item-counter p {
+  margin: 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.food-item-counter img {
+  width: 25px;
+  
+  cursor: pointer;
+  
+}
+
+.food-item-counter img:hover {
+  transform: scale(1.2);
+}
+
+.add {
+  position: absolute;
+  bottom: 10px;
+  left: 85%;
+  transform: translateX(-50%);
+  width: 35px;
+  
+  cursor: pointer;
+  
+  animation: opacity 0.1s ease;
+}
+
+
+
+.food-item-info-container {
+  padding: 15px;
+  background-color: #fff;
+}
+
+.food-item-name-rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.food-item-name-rating p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+.food-item-name-rating .foodName{
+  color: tomato;
+}
+.food-item-name-rating img {
+  width: 50px;
+ 
+}
+
+.food-item-description {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+  text-align: start;
+}
+
+.food-item-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ed6d28;
+  margin-left:-80%;
+}
+
+
+@keyframes  opacity{
+    0%{
+        left:70%
+    }
+    100%{
+        left:85%
+    }
+
+}
+@media (max-width: 750px){
+  
+  .food-item-container{
+      max-width: 300px;
+      
+  }
+  
+
+}

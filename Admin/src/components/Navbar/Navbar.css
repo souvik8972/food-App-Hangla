@@ -1,0 +1,40 @@
+.admin-panel-navbar{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.071) ;
+    
+}
+.admin-panel-navbar__logo h3{
+    font-size: larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: tomato;
+}
+.admin-panel-navbar__logo p{
+    
+    margin-top: -20px;
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.admin-panel-navbar__menu ul{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+    align-items: center;
+    margin-right: 20px;
+    gap:20px;
+    list-style: none;
+}
+.admin-panel-navbar__menu ul li button{
+    padding: 4px 20px 4px 20px;
+    border-radius: 10px;
+    background-color: orange;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+}
