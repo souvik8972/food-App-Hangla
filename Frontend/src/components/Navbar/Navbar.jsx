@@ -3,10 +3,13 @@
 import { CiShoppingCart } from "react-icons/ci";
 import { IoFastFoodOutline } from "react-icons/io5";
 import "./Navbar.css";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { StoreContext } from "../../context/StoreContext";
+import { assets } from "../../assets/assets";
+import { IoIosLogOut } from "react-icons/io";
 
 const Navbar = ({ setLoginBtn }) => {
     const container = useRef();
@@ -14,6 +17,7 @@ const Navbar = ({ setLoginBtn }) => {
     const [isActive, setIsActive] = useState("home");
     const [isScrolled, setIsScrolled] = useState(false);
     const location = useLocation();
+    const {token,setToken}=useContext(StoreContext)
 
     useGSAP(() => {
         const tl = gsap.timeline();
@@ -66,6 +70,12 @@ const Navbar = ({ setLoginBtn }) => {
         }
     }, [location]);
 
+    const logOutHandler=()=>{
+        localStorage.removeItem("token")
+        setToken(null)
+    }
+
+
     return (
         <div className={`nav-container ${isScrolled ? 'scrolled' : ''}`}>
             <div className="left">
@@ -115,9 +125,18 @@ const Navbar = ({ setLoginBtn }) => {
                         <div className="dot"></div>
                     </Link>
                 </div>
-                <button onClick={() => setLoginBtn(true)} className="sign-up-btn">
+                {!token ? <button onClick={() => setLoginBtn(true)} className="sign-up-btn">
                     Sign Up
-                </button>
+                </button>:
+                <div className="user-box">
+                    <img src={assets.profile_icon}/>
+                    <ul className="user-option-list">
+                            <li onClick={logOutHandler}><IoIosLogOut /></li>
+
+                        
+                    </ul>
+                </div>}
+                
             </div>
         </div>
     );

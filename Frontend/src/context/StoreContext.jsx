@@ -6,6 +6,18 @@ import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const StoreContextProvider = ({ children }) => {
+    const [token,setToken]=useState("")
+    useEffect(()=>{
+        if (localStorage.getItem("token")) {
+            setToken(localStorage.getItem("token"));
+        }
+
+        console.log(token)
+
+    },[])
+
+    let url ="http://localhost:3000"
+
     const [cartItems, setCartItems] = useState({});
     useEffect(()=>{
         console.log({cartItems})
@@ -70,7 +82,10 @@ const StoreContextProvider = ({ children }) => {
         cartItems,
         deleteFromCart,
          successNotify,
-         totalCartAmount
+         totalCartAmount,
+         url,
+         token,
+         setToken
     };
 
     return (

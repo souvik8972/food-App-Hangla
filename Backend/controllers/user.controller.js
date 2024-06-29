@@ -1,11 +1,17 @@
 import UserModel from "../models/user.model.js";
 import bcrypt from "bcrypt";
 import { generateToken } from "../utils/jwt.js";
+import validator from 'validator';
 
 // Signup controller
 export const signup = async (req, res) => {
     try {
         const { username, email, password,isAdmin } = req.body;
+    
+
+        if (!validator.isEmail(email) ){
+            return res.json({success:false, message:"Please enter a valid email address"})
+        }
 
         // Check if the user already exists
         const isUserPresent = await UserModel.findOne({ email });
@@ -17,17 +23,18 @@ export const signup = async (req, res) => {
         const hashPassword = await bcrypt.hash(password, 10);
 
         // Create and save the new user
-        const user = new UserModel({
+        const newUser = new UserModel({
             username,
             email,
             password: hashPassword,
             isAdmin:isAdmin||false
             
         });
-        await user.save();
+        const user=await newUser.save();
+        const token=generateToken(user);
 
         // Respond with success message
-        return res.status(201).json({ success: true, message: "User saved successfully" });
+        return res.status(201).json({ success: true, message: "User saved successfully",token });
 
     } catch (error) {
         // Handle any errors that occur
