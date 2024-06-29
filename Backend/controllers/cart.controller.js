@@ -65,7 +65,7 @@ export const allCartItems = async(req, res) => {
             return res.status(404).send({success:false,message: "User not found"})
         }
         const cartItems = await user.cartItems
-        res.status(200).send({success:true,message:"successfully Fetched cart",cartItems})
+        res.status(200).json({success:true,message:"successfully Fetched cart",cartItems})
         
     } catch (error) {
         res.status(500).json({success:false,message: error.message})

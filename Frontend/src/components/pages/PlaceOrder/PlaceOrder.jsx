@@ -35,7 +35,7 @@ const PlaceOrder = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('User Details:', userDetails);
+  
     setUserDetails({
       fullName: '',
       address: {
