@@ -27,7 +27,7 @@ const Login = ({ setLoginBtn}) => {
         let newUrl = url;
         if (loginState === "Login") {
             newUrl = `${newUrl}/api/user/login`;
-        } else if(loginState === "Sign up") {
+        } else if (loginState === "Sign up") {
             newUrl = `${newUrl}/api/user/signup`;
         }
 
@@ -35,12 +35,20 @@ const Login = ({ setLoginBtn}) => {
             const response = await axios.post(newUrl, userDetails);
             toast.success(response.data.message);
             localStorage.setItem("token", response.data.token);
-            setToken(response.data.token)
-            setLoginBtn(false)
+            setToken(response.data.token);
+            setLoginBtn(false);
             // Additional handling of successful login/signup
         } catch (error) {
-            console.error("Error:", error);
-            
+            if (error.response) {
+                // The request was made and the server responded with an error status code
+                toast.error(error.response.data.message);
+            } else if (error.request) {
+                // The request was made but no response was received
+                console.error("Request made but no response received:", error.request);
+            } else {
+                // Something happened in setting up the request that triggered an Error
+                console.error("Error setting up the request:", error.message);
+            }
         }
     };
 

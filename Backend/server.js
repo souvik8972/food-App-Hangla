@@ -4,6 +4,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import foodRoute from "./routes/food.route.js"
 import userRoute from "./routes/user.route.js"
+import cartRoute from "./routes/cart.route.js";
 import path from "path"
 
 // Create an instance of express
@@ -20,6 +21,7 @@ app.use(cors());
 // Routes
 app.use("/api/food",foodRoute)
 app.use("/api/user/",userRoute)
+app.use("/api/cart/",cartRoute)
 
 // Connect to MongoDB
 connectDb()

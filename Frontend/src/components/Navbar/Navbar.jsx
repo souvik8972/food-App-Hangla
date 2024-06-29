@@ -10,6 +10,7 @@ import { useGSAP } from '@gsap/react';
 import { StoreContext } from "../../context/StoreContext";
 import { assets } from "../../assets/assets";
 import { IoIosLogOut } from "react-icons/io";
+import { toast } from "react-toastify"
 
 const Navbar = ({ setLoginBtn }) => {
     const container = useRef();
@@ -72,6 +73,7 @@ const Navbar = ({ setLoginBtn }) => {
 
     const logOutHandler=()=>{
         localStorage.removeItem("token")
+        toast.success("logged out")
         setToken(null)
     }
 

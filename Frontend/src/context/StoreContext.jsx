@@ -1,13 +1,24 @@
 /* eslint-disable react/prop-types */
+import axios from "axios";
 import { createContext,  useEffect,  useState } from "react";
-import { food_list } from "../assets/assets";
+// import { food_list } from "../assets/assets";
 const StoreContext = createContext(null);
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const StoreContextProvider = ({ children }) => {
+    let url = "http://localhost:3000"
+    const [food_list,setFood_list]=useState([])
+
+let getFoodList = async() =>{
+    let response=await axios.get(`${url}/api/food/all/foods`)
+    console.log(response)
+    setFood_list(response.data.data)
+}
     const [token,setToken]=useState("")
     useEffect(()=>{
+        getFoodList()
+        
         if (localStorage.getItem("token")) {
             setToken(localStorage.getItem("token"));
         }
@@ -16,7 +27,7 @@ const StoreContextProvider = ({ children }) => {
 
     },[])
 
-    let url ="http://localhost:3000"
+
 
     const [cartItems, setCartItems] = useState({});
     useEffect(()=>{

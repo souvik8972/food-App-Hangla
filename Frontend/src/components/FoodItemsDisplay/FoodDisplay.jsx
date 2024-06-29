@@ -20,7 +20,9 @@ const FoodDisplay = ({ category }) => {
       
         <div className="food-display-grid">
           {food_list.map((food) => {
-            if (category === "All" || category === food.category) {
+            let lowerCase=category.toLowerCase();
+          
+            if (category === "All" || lowerCase === food.category) {
               return (
                 <FoodItem
                   key={food._id}

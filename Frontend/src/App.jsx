@@ -21,7 +21,7 @@ function App() {
   return (
     <>
   
-      <ToastContainer stacked  />
+      <ToastContainer stacked autoClose={2000} />
       {loginBtn && <Login setLoginBtn={setLoginBtn} loginBtn={loginBtn} />}
       <Navbar setLoginBtn={setLoginBtn} />
       <Routes>

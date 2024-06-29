@@ -20,8 +20,12 @@ const userSchema = new mongoose.Schema({
 
         default: false,
         required: true
+    },
+    cartItems:{
+        type:Object,
+        default:{}
     }
-})
+},{minimize:false})
 
 
 

@@ -43,3 +43,6 @@
     transform: scale(0.95);
     
 }
+body::-webkit-scrollbar{
+    display: none;
+}

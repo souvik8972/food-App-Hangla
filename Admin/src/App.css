@@ -12,6 +12,9 @@
     min-height: 90vh;
     border: 1px solid #ccc;
     
-
+overflow-y:scroll;
     width: 100%;
+}
+.routes::-webkit-scrollbar{
+    display: none;
 }
