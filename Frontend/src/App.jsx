@@ -12,24 +12,37 @@ import { useState } from 'react';
 import Login from "./components/Login/Login"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Verify from './components/pages/Verify/Verify';
 
 // import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 
 function App() {
   const [loginBtn, setLoginBtn] = useState(false)
-  
+
   return (
     <>
-  
-      <ToastContainer stacked autoClose={2000} />
+
+      <ToastContainer
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable
+        pauseOnHover
+        theme="light"
+
+      />
       {loginBtn && <Login setLoginBtn={setLoginBtn} loginBtn={loginBtn} />}
       <Navbar setLoginBtn={setLoginBtn} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart/>}/>
-        <Route path="/order" element={<PlaceOrder/>}/>
-        
-        
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/order" element={<PlaceOrder />} />
+        <Route path="/verify" element={<Verify />} />
+
       </Routes>
       <Footer />
     </>

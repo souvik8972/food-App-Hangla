@@ -18,7 +18,10 @@ const Navbar = ({ setLoginBtn }) => {
     const [isActive, setIsActive] = useState("home");
     const [isScrolled, setIsScrolled] = useState(false);
     const location = useLocation();
-    const {token,setToken}=useContext(StoreContext)
+    const { token, setToken, cartItems } = useContext(StoreContext)
+
+
+    let [cartDot, setCartDot] = useState(false);
 
     useGSAP(() => {
         const tl = gsap.timeline();
@@ -70,8 +73,19 @@ const Navbar = ({ setLoginBtn }) => {
             }
         }
     }, [location]);
+    
+    
+    //
+    useEffect(()=>{
+        console.log("HHH",Object.keys(cartItems))
+        if(Object.keys(cartItems).length>0){
+            setCartDot(true)
+        }else{
+            setCartDot(false)
+        }
+    },[cartItems])
 
-    const logOutHandler=()=>{
+    const logOutHandler = () => {
         localStorage.removeItem("token")
         toast.success("logged out")
         setToken(null)
@@ -124,21 +138,21 @@ const Navbar = ({ setLoginBtn }) => {
                 <div className="cart-section">
                     <Link to="/cart">
                         <CiShoppingCart className="cart" />
-                        <div className="dot"></div>
+                        {cartDot ? <div className="dot"></div>:<></>}    
                     </Link>
                 </div>
                 {!token ? <button onClick={() => setLoginBtn(true)} className="sign-up-btn">
                     Sign Up
-                </button>:
-                <div className="user-box">
-                    <img src={assets.profile_icon}/>
-                    <ul className="user-option-list">
+                </button> :
+                    <div className="user-box">
+                        <img src={assets.profile_icon} />
+                        <ul className="user-option-list">
                             <li onClick={logOutHandler}><IoIosLogOut /></li>
 
-                        
-                    </ul>
-                </div>}
-                
+
+                        </ul>
+                    </div>}
+
             </div>
         </div>
     );

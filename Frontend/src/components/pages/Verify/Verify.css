@@ -1,0 +1,12 @@
+.verify-container
+{
+    width: 90%;
+    margin: auto;
+flex-direction: column-reverse;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    gap:30px;
+    font-size: large;
+}
