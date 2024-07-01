@@ -9,8 +9,11 @@
     border-radius: 10px  10px 0 0;
     margin-top: 50px;
     overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    
     border-bottom: 2px solid rgba(245, 222, 179, 0.459);
 }
+
 .left-footer{
     width: 30%;
     padding: 40px;

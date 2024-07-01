@@ -93,10 +93,10 @@ const StoreContextProvider = ({ children }) => {
     const successNotify = (text) => {
         toast.success(text, {
             position: "top-right",
-            autoClose: 1500,
+            autoClose: 1000,
             hideProgressBar: false,
             closeOnClick: true,
-            pauseOnHover: true,
+            pauseOnHover: false,
             draggable: true,
             progress: undefined,
             theme: "light",

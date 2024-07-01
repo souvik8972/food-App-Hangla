@@ -5,6 +5,9 @@ const Footer = () => {
     return (
         <>
             <div className="footer-container" id="footer-container">
+                
+            
+                
                 <div className="left-footer">
                     <h2 className="footer-heading logo-name">Hangla.com</h2>
                     <p className="description-footer">
