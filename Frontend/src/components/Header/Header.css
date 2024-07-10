@@ -31,7 +31,7 @@
     /* background-color: #f1f1f1; */
     position: absolute;
 width: 95vw;
-    top:65%;
+    top:60%;
 
     right: 0px;
     left: -10px;
@@ -129,6 +129,16 @@ text-shadow:
 
 .explore-btn .arrow {
   transform: translate(40%, 20%);
+}
+.header-img{
+    background-size: contain;
+  background-repeat: no-repeat;
+  margin: auto;
+
+  width: 100%;
+
+  border-radius: 0 0 10px 10px;
+
 }
 
 @media (max-width: 1090px) {

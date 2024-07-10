@@ -62,13 +62,15 @@ import parcel_icon from './parcel_icon.png'
 import background from "./background.jpg"
 import empty_cart from "./empty-cart.jpg"
 import video from "./food.mp4"
+import header from "./header.jpeg"
 
 export const assets = {
     logo,
+    header_img,
     empty_cart,
     background,
     basket_icon,
-    header_img,
+    header,
     search_icon,
     rating_starts,
     add_icon_green,
