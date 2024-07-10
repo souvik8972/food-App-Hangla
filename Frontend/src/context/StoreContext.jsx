@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const StoreContextProvider = ({ children }) => {
-    let url = "http://localhost:3000"
+    let url = "https://food-app-hangla-backend.onrender.com"
     const [food_list, setFood_list] = useState([])
     const [cartItems, setCartItems] = useState({});
     const [token, setToken] = useState("")
