@@ -8,7 +8,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import { toast } from "react-toastify";
 
 const Items = () => {
-  const url = "http://localhost:3000";
+  const url = "https://food-app-hangla-backend.onrender.com";
   const [foodData, setFoodData] = useState([]);
   const [loading, setLoading] = useState(true);
 
