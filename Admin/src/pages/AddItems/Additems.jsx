@@ -16,7 +16,7 @@ const categories = [
 ];
 
 const Additems = () => {
-  const url = "http://localhost:3000";
+  const url = "https://food-app-hangla-backend.onrender.com";
   const [selectedImage, setSelectedImage] = useState(null);
   const nameRef = useRef("");
   const descriptionRef = useRef("");
