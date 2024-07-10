@@ -10,8 +10,7 @@ import Login from "./components/Login/Login";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Verify from './components/pages/Verify/Verify';
-// Adjust the path as necessary
-import { HashLoader } from 'react-spinners';
+
 import Order from './components/pages/Order/Order';
 
 function App() {
@@ -31,12 +30,11 @@ function App() {
   }, []);
 
   if (loading) {
-    return <div className='loader-spin'> <HashLoader
-      color="#ec712a"
-      cssOverride={{}}
-      size={60} 
-      speedMultiplier={2}
-    /></div>
+    return (
+      <div className="loader-spin">
+        Loading....
+      </div>
+    );
   }
 
   return (
@@ -61,7 +59,6 @@ function App() {
         <Route path="/order" element={<PlaceOrder />} />
         <Route path="/verify" element={<Verify />} />
         <Route path="/myorders" element={<Order/>}/>
-
       </Routes>
       <Footer />
     </>
