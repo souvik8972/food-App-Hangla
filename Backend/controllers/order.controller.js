@@ -13,7 +13,7 @@ const placeOrder = async (req, res) => {
         const { items, amount, address } = req.body;
         const userId = req.user.id;
 
-        console.log(req.body);
+
 
         // Convert the total amount to the smallest currency unit (e.g., paisa for INR)
         const totalAmount = Math.round(amount * 100 * 84);
@@ -78,14 +78,14 @@ const placeOrder = async (req, res) => {
 
 const verifyOrder = async (req, res) => {
     try {
-        const {  order_id, success } = req.body;
+        const { order_id, success } = req.body;
 
         if (success === "true") {
-            await orderModel.findByIdAndUpdate({_id:order_id}, { payment: true });
-            return res.status(200).json({ success: true ,message:"Paid" });
+            await orderModel.findByIdAndUpdate({ _id: order_id }, { payment: true });
+            return res.status(200).json({ success: true, message: "Paid" });
         } else {
             await orderModel.findByIdAndDelete({ _id: order_id });
-            return res.status(200).json({ success: false,message:"Not Paid" });
+            return res.status(200).json({ success: false, message: "Not Paid" });
         }
     } catch (error) {
         console.error('Error verifying order:', error); // Log error for debugging
@@ -93,5 +93,21 @@ const verifyOrder = async (req, res) => {
     }
 };
 
+ 
+const userOrders = async (req, res) => {
+    try {
+        const userId = req.user.id;
 
-export { placeOrder, verifyOrder };
+        const orders = await orderModel.find({ userId: userId });
+
+
+        res.status(200).json({ success: true, data: orders });
+
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+
+    }
+}
+
+
+export { placeOrder, verifyOrder, userOrders };

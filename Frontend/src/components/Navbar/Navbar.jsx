@@ -122,9 +122,17 @@ const Navbar = ({ setLoginBtn }) => {
                         </Link>
                     </li>
                     <li>
+                        <Link to="/myorders" onClick={() => setIsActive("myorders")} className={isActive === "myorders" ? "active" : ""}>
+                            My Orders
+                        </Link>
+                    </li>
+                    <li>
                         <Link to="/#footer-container" onClick={() => setIsActive("about")} className={isActive === "about" ? "active" : ""}>
                             About
                         </Link>
+                    </li>
+                    <li>
+
                     </li>
                     <li>
                         <Link to="/#app-download-container" onClick={() => setIsActive("mobile-app")} className={isActive === "mobile-app" ? "active" : ""}>
