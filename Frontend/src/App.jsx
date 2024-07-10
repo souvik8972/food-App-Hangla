@@ -24,9 +24,7 @@ function App() {
 
     window.addEventListener('load', handlePageLoad);
 
-    return () => {
-      window.removeEventListener('load', handlePageLoad);
-    };
+    
   }, []);
 
   if (loading) {
