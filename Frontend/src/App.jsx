@@ -5,7 +5,7 @@ import Cart from './components/pages/Cart/Cart';
 import PlaceOrder from './components/pages/PlaceOrder/PlaceOrder';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import Login from "./components/Login/Login";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -15,25 +15,7 @@ import Order from './components/pages/Order/Order';
 
 function App() {
   const [loginBtn, setLoginBtn] = useState(false);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const handlePageLoad = () => {
-      setLoading(false);
-    };
-
-    window.addEventListener('load', handlePageLoad);
-
-    
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="loader-spin">
-        Loading....
-      </div>
-    );
-  }
 
   return (
     <>
