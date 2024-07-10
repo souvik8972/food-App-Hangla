@@ -61,7 +61,7 @@ import logout_icon from './logout_icon.png'
 import parcel_icon from './parcel_icon.png'
 import background from "./background.jpg"
 import empty_cart from "./empty-cart.jpg"
-import video from "./food.mp4"
+
 import header from "./header.jpeg"
 
 export const assets = {
@@ -87,7 +87,7 @@ export const assets = {
     logout_icon,
     bag_icon,
     parcel_icon,
-    video
+
 }
 
 export const menu_list = [
